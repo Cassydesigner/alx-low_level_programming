@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
-* main - Entry point
+* main - C program that prints exactly new line
 *
 * Return: Always 1 (Success)
 */
