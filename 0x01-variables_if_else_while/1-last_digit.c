@@ -4,7 +4,7 @@
 
 /**
  * main - Entry point
- * Description: assign a random number to the variable n
+ * Description:  Prints the last digit of a randomly generated number
  * Return: Always 0.
  */
 int main(void)
