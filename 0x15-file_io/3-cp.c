@@ -5,27 +5,28 @@
 #include <unistd.h>
 
 char *allocate_buffer(char *file);
-void close_descriptor(int fd);
+void close_file(int fd);
 
 /**
- * allocate_buffer - Allocate 1024 bytes of memory for a buffer.
- * @file: The file for which the buffer is allocated.
+ * allocate_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file buffer is storing chars for.
  *
- * Return: A pointer to the newly allocated buffer.
+ * Return: A pointer to the newly-allocated buffer.
  */
 char *allocate_buffer(char *file)
 {
-char *buffer;
+	char *buffer;
 
-buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * 1024);
 
-if (buffer == NULL)
-{
-dprintf(STDERR_FILENO, "Error: Unable to allocate memory for buffer.\n");
-exit(99);
-}
+	if (buffer == NULL)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", file);
+		exit(99);
+	}
 
-return (buffer);
+	return (buffer);
 }
 
 /**
